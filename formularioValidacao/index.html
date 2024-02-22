@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.1"/>
+  <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <style>
+    * {
+      outline:none;
+    }
+    #erroMensagem {
+    font-size: 10px;
+}
+  </style>
+
+  <div id="form">
+
+    <label for="nome">Nome</label><br>
+    <input type="text" id="nome"><br><br>
+
+    <label for="email">Email</label><br>
+    <input type="text" id="email"><br><br>
+
+    <button id="btn">Enter</button><br><br>
+    <div id="erroMensagem"></div>
+
+  </div>
+
+  <script>
+
+    document.getElementById("btn").addEventListener("click", (e) => {
+      e.preventDefault()
+
+      let nome = document.getElementById("nome").value
+      let email = document.getElementById("email").value
+      let erroMensagem = document.getElementById("erroMensagem")
+
+      if (nome === '' || email === '') {
+        erroMensagem.innerHTML = 'Preencha todo o formulário!'  
+        erroMensagem.style.color = 'red'
+        
+      } else {
+        location.href = "home.html"
+      }
+
+      
+    })
+
+  </script>
+</body>
+
+</html>
